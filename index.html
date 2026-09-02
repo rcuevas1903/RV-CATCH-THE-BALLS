@@ -178,7 +178,7 @@
 
       sumarPunto: function () {
         if (!this.jugando) return;
-        this.puntos++;
+        this.puntos += 10;
         this.hudPuntos.setAttribute('value', `Puntos: ${this.puntos}`);
       },
 
@@ -201,10 +201,10 @@
 
       reiniciar: function () {
         this.puntos = 0;
-        this.segundosRestantes = 30;
+        this.segundosRestantes = 60;
         this.jugando = true;
         this.hudPuntos.setAttribute('value', 'Puntos: 0');
-        this.hudTiempo.setAttribute('value', 'Tiempo: 30');
+        this.hudTiempo.setAttribute('value', 'Tiempo: 60');
         this.hudFinal.setAttribute('visible', false);
         this.botonReiniciar.setAttribute('visible', false);
         // Movemos el objetivo a un punto nuevo para empezar limpio
