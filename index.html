@@ -147,7 +147,7 @@
     AFRAME.registerComponent('gestor-juego', {
       init: function () {
         this.puntos = 0;
-        this.segundosRestantes = 30;
+        this.segundosRestantes = 60;
         this.jugando = true;
 
         // Guardamos referencias a los textos del HUD para no buscarlos cada vez
@@ -185,9 +185,9 @@
       // *** NUEVO *** gemelo de sumarPunto, pero resta en vez de sumar
       restarPunto: function () {
         if (!this.jugando) return;
-        this.puntos--;
+        this.puntos -= 10;
         // Si NO quieres que baje de 0, quita el // de la línea de abajo:
-        // if (this.puntos < 0) this.puntos = 0;
+        if (this.puntos < 0) this.puntos = 0;
         this.hudPuntos.setAttribute('value', `Puntos: ${this.puntos}`);
       },
 
